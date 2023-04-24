@@ -9,7 +9,7 @@ def getip(url):
 
 def display(results):
     output=''
-    if(not results):
+    if(results):
         for x in results:
             output=output+str(x)+' '
     print(output)
