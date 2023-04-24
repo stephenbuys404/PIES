@@ -47,7 +47,7 @@ while(t<5*365*daysec):
     t +=dt
 print('data ready')
 fig, ax = plt.subplots(figsize=(6,6))
-if not ax is None:
+if(ax):
     ax.set_aspect('equal')
     ax.grid()
     line_e,     = ax.plot([],[],'-g',lw=1,c='blue')
