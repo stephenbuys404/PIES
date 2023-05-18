@@ -1,11 +1,7 @@
 import socket
 
 def getip(url):
-    try:
-        results=socket.gethostbyname_ex(url)
-    except:
-        results=[]
-    return results
+    return socket.gethostbyname_ex(url)
 
 def display(results):
     output=''
