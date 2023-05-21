@@ -3,7 +3,6 @@ from tkinter import *
 from typing import Final
 from itertools import groupby
 from tkinter import messagebox
-from cryptography.fernet import Fernet
 
 NAME:Final[str]='Diary'
 class window(Frame):
