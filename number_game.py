@@ -16,7 +16,7 @@ dice_rolls = 222
 placed_bet = 1
 winning = []
 balance = []
-pilot.title('Numbers [' + str(simulations) + ']')
+pilot.title('Numbers [' + simulations + ']')
 pilot.xlabel('RollNumber')
 pilot.ylabel('Money[R]')
 pilot.xlim([0, dice_rolls])
@@ -38,5 +38,5 @@ for i in range(simulations):
 pilot.show()
 winrate = sum(winning)/len(winning)
 endrate = sum(balance)/len(balance)
-print(str(simulations) + 'runs: ' + str(winrate))
-print(str(simulations) + 'runs: R' + str(endrate))
+print(simulations + 'runs: ' + winrate)
+print(simulations + 'runs: R' + endrate)
