@@ -5,43 +5,6 @@ import pandas
 import yfinance as yf
 import plotly.graph_objs as go
 
-#UBER       
-#TSLA       
-#MERC       
-#BMWYY      
-#VWAGY      
-#TM         
-#SSUN.F     
-#AAL      
-#AAP      
-#AAPL      
-#LOMAX   
-#AAT        
-#AES        
-#BBCA      
-#ELBM       
-#AMSC      
-#MULN     
-#AMZN      
-#MSFT    
-#BURU     
-#QLYS       
-#IBM       
-#COKE      
-#KO        
-#NKE       
-#DIS      
-#GE        
-#LPL       
-#VOD.JO     
-#VDMCY      
-#SPCB      
-#BTC-USD 
-#MCD       
-#BA        
-#ACN       
-#RYBIF
-
 ticker='IBM'
 fig:go._figure.Figure=go.Figure()
 data:pandas.core.frame.DataFrame=yf.download(tickers=ticker, period='1d', interval='1m')
