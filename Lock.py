@@ -7,34 +7,40 @@ class Encryptor():
         return Fernet.generate_key()
 
     def key_write(self, key, key_name):
-        with open(key_name, 'wb') as mykey:
-            mykey.write(key)
+        file = open(key_name, 'wb')
+        mykey.write(key)
+        file.close()
 
     def key_load(self, key_name):
-        with open(key_name, 'rb') as mykey:
-            return mykey.read()
+        file = open(key_name, 'rb')
+        mk=mykey.read()
+        file.close()
+        return mk
 
     def file_encrypt(self, key, original_file, encrypted_file):
+        file = open(original_file, 'rb')
+        original = file.read()
+        file.close()
         fer = Fernet(key)
-        with open(original_file, 'rb') as file:
-            original = file.read()
         encrypted = fer.encrypt(original)
-        with open (encrypted_file, 'wb') as file:
-            file.write(encrypted)
+        file = open(encrypted_file, 'wb')
+        file.write(encrypted)
+        file.close()
 
     def file_decrypt(self, key, encrypted_file, decrypted_file):
+        file=open(encrypted_file, 'rb')
+        encrypted=file.read()
+        file.close()
         fer = Fernet(key)
-        with open(encrypted_file, 'rb') as file:
-            encrypted = file.read()
         decrypted = fer.decrypt(encrypted)
-        with open(decrypted_file, 'wb') as file:
-            file.write(decrypted)
+        file=open(decrypted_file, 'wb')
+        file.write(decrypted)
+        file.close()
 
 def makefile(name):
-    if(not os.path.exists(name+'.csv')):
-        file = open(name+'.csv','a')
-        file.write('1,2,3,4,5,6,7,8')
-        file.close()
+    file = open(name+'.csv','a')
+    file.write('1,2,3,4,5,6,7,8')
+    file.close()
 
 encryptor=Encryptor()
 mykey=encryptor.key_create()
