@@ -121,19 +121,9 @@ def clear_rows(grid, locked):
 
 def update_score(nscore):
     score = max_score()
-    with(open('scores.txt', 'w'))as f:
-        if(int(score)>nscore):
-            f.write(str(score))
-        else:
-            f.write(str(nscore))
-
+    
 def max_score():
     score='0'
-    if(os.path.exists('score.txt')):
-        with open('scores.txt','r')as f:
-            lines = f.readlines()
-            if(len(lines)>=1):
-                score = lines[0].strip()
     return score
 
 def draw_window(surface, grid, score=0, last_score = 0):
