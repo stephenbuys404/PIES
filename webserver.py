@@ -24,6 +24,5 @@ class CandyStore(object):
         request.setHeader('Content-Type','application/json')
         return json.dumps(self._items.get(name))
 
-if(__name__=='__main__'):
-    store=CandyStore()
-    store.app.run('localhost', 8080)
+store=CandyStore()
+store.app.run('localhost', 8080)
