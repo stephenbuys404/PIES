@@ -20,5 +20,5 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 handler_object = MyHttpRequestHandler
 PORT = 8000
-my_server=socketserver.TCPServer((str(), PORT), handler_object)
+my_server=socketserver.TCPServer(("", PORT), handler_object)
 my_server.serve_forever()
