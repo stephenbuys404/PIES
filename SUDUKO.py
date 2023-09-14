@@ -100,8 +100,7 @@ class Board:
         abc.yaxis.grid(True,'major',linewidth=3)
         plt.show()
 
-if(__name__=='__main__'):
-    board = Board()
-    board.fill_grid()
-    board.create_puzzle()
-    board.show_puzzle()
+board = Board()
+board.fill_grid()
+board.create_puzzle()
+board.show_puzzle()
