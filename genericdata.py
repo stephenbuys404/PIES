@@ -3,7 +3,6 @@ import os
 import pickle
 
 filename='file1.dat'
-
 def Write():
     f=open(filename,'wb')
     list=[1,'Lovejot','Teacher']
@@ -13,14 +12,14 @@ def Write():
 def Read():
     objects = []
     if(os.path.exists(filename)):
-        with(open(filename,'rb'))as openfile:
-            while(True):
-                try:
-                    objects.append(pickle.load(openfile))
-                except(EOFError):
-                    break
-            openfile.close()
-            print(objects)
+        openfile=open(filename,'wb')
+        while(True):
+            try:
+                objects.append(pickle.load(openfile))
+            except(EOFError):
+                break
+        openfile.close()
+        print(objects)
 
 #Write()
 Read()
