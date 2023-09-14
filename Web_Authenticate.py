@@ -6,7 +6,6 @@ from flask_restful import Resource, Api
 from flask_httpauth import HTTPBasicAuth
 
 #http://localhost:5000/hello_world
-
 app = Flask(__name__)
 api = Api(app)
 auth = HTTPBasicAuth()
@@ -27,6 +26,4 @@ class HelloWorld(Resource):
         return { 'Hello':'World' }
 
 api.add_resource(HelloWorld,'/hello_world')
-
-if(__name__=='__main__'):
-    app.run(debug=True)
+app.run(debug=True)
