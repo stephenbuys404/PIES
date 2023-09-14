@@ -30,7 +30,7 @@ def play(name):
     play=pyaudio.PyAudio()
     stream=play.open(format=play.get_format_from_width(filewidth),channels=nchannels,rate=nrate,output=True)
     data=file.readframes(chunk)
-    while(data!=bytes()):
+    while(data):
         stream.write(data)
         data=file.readframes(chunk)
     stream.close()
