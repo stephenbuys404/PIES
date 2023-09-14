@@ -28,8 +28,7 @@ def printList(array):
         print(array[i], end=' ')
     print()
 
-if(__name__=='__main__'):
-    array = [6, 5, 12, 10, 9, 1]
-    mergeSort(array)
-    print('Sorted array is: ')
-    printList(array)
+array = [6, 5, 12, 10, 9, 1]
+mergeSort(array)
+print('Sorted array is: ')
+printList(array)
