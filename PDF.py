@@ -6,8 +6,7 @@ from pdfkit.api import configuration
 
 def convert(link,name):
     filename='C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
-    if(os.path.exists(filename)):
-        wkhtml_path=pdfkit.configuration(wkhtmltopdf=filename)
-        pdfkit.from_url(link,name,configuration=wkhtml_path)
+    wkhtml_path=pdfkit.configuration(wkhtmltopdf=filename)
+    pdfkit.from_url(link,name,configuration=wkhtml_path)
 
 convert('https://www.google.com','sample.pdf')
